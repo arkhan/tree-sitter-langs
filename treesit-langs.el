@@ -128,7 +128,7 @@ elisp-tree-sitter) to a query string compatible with treesit."
       (progn
         (let ((lang-symbol
                (alist-get major-mode tree-sitter-major-mode-language-alist)))
-          (unless (and (treesit-can-enable-p)
+          (unless (and (featurep 'treesit)
                        (treesit-language-available-p lang-symbol))
             (error "Tree sitter isn't available"))
 
